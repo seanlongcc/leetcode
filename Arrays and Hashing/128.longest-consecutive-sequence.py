@@ -25,6 +25,7 @@ class Solution:
 
         return longest
 
+        # THIS SOLUTION IS O(nlogn) due to using sort()
         # if not nums:
         #     return 0
 
@@ -46,7 +47,6 @@ class Solution:
         #         current_length = 1
 
         # Return the maximum length (considering the last sequence)
-        # print(max(max_length, current_length))
         # return max(max_length, current_length)
 
         # @lc code=end
