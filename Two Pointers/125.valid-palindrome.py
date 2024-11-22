@@ -15,7 +15,7 @@ class Solution:
         left = 0
         right = len(alphanumeric) - 1
 
-        while left <= right:
+        while left < right:
             if alphanumeric[left] == alphanumeric[right]:
                 left += 1
                 right -= 1
