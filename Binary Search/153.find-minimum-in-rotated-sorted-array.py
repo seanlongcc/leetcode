@@ -26,7 +26,7 @@ class Solution:
             # this can just be an else
             elif nums[mid] > nums[right]:
                 left = mid
-            # check right - left = 1, the right will always be the minimum
+            # check if right - left = 1, the right will always be the minimum
             if right - left == 1:
                 print(nums[right])
                 return nums[right]
