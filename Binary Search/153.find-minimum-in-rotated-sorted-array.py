@@ -19,6 +19,7 @@ class Solution:
 
         while left <= right:
             mid = (right + left)//2
+            # the sorted side is the side that contains mid
             # look at unsorted side, which is left window pointer is greater than right window pointer
             if nums[left] > nums[mid]:
                 # we cant do mid - 1 here since it can be the answer, unlike problem 704, where we check if mid is the target
