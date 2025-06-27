@@ -10,18 +10,18 @@ class Solution:
         stack = []
         parens = {'(': ')', '[': ']', '{': '}'}
 
-        for p in s:
+        for char in s:
             # check if the current iterator is in an open paren, if so add to stack
-            if p in parens.keys():
-                stack.append(p)
+            if char in parens.keys():
+                stack.append(char)
             # check if the current iterator is a closed paren
-            elif p in parens.values():
+            elif char in parens.values():
                 # check if the stack is empty, if it's empty, that means no open paren, so fail it
                 if len(stack) > 0:
                     # pop last open paren in stack, this will always be an open paren
                     open_paren = stack.pop()
                     # compare last open paren, to the current iterator, a closed paren
-                    if parens[open_paren] == p:
+                    if parens[open_paren] == char:
                         continue
                     else:
                         return False
