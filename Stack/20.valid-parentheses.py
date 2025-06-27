@@ -7,14 +7,16 @@
 # @lc code=start
 class Solution:
     def isValid(self, s: str) -> bool:
+
         stack = []
         parens = {'(': ')', '[': ']', '{': '}'}
 
         for char in s:
-            # check if the current iterator is in an open paren, if so add to stack
+            # check if the current iterator is in an open paren, if so add to stack, since its the start of a new entry
             if char in parens.keys():
                 stack.append(char)
-            # check if the current iterator is a closed paren
+            # check if the current iterator is a closed paren, we dont add these to the stack since the what is in the stack will always be an open paren
+            # also because if there is 2 open parens back to back, we fail it anyways
             elif char in parens.values():
                 # check if the stack is empty, if it's empty, that means no open paren, so fail it
                 if len(stack) > 0:
