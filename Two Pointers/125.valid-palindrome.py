@@ -9,9 +9,6 @@ class Solution:
     def isPalindrome(self, s: str) -> bool:
         alphanumeric = ''.join(filter(str.isalnum, s)).lower()
 
-        if not alphanumeric:
-            return True
-
         left = 0
         right = len(alphanumeric) - 1
 
@@ -19,8 +16,7 @@ class Solution:
             if alphanumeric[left] == alphanumeric[right]:
                 left += 1
                 right -= 1
-                continue
-            if alphanumeric[left] != alphanumeric[right]:
+            else:
                 return False
         return True
 

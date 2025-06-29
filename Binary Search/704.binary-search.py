@@ -13,7 +13,7 @@ class Solution:
         left = 0
         right = len(nums) - 1
 
-        # its less than or equal to account for searching the same index
+        # its less than or equal to account for searching the same index/last index
         while left <= right:
             mid = (left + right) // 2
             if target == nums[mid]:
@@ -28,3 +28,8 @@ class Solution:
 
 
 Solution().search(nums=[-1, 0, 3, 5, 9, 12], target=9)
+
+# Need to consider single elements?
+# Use a closed interval and while left <= right.
+# Always dealing with a pair of distinct indices?
+# Use a half-open interval and while left < right.

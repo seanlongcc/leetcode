@@ -12,11 +12,13 @@ class Solution:
         left = 0
         max_profit = 0
 
+        # move right pointer since time doesnt go backwards
         for right in range(len(prices)):
+            # check if right is less than left to set new minimum
             if prices[right] < prices[left]:
                 left = right
-                continue
 
+            # compare and set the max
             max_profit = max(max_profit, prices[right] - prices[left])
 
         return max_profit
