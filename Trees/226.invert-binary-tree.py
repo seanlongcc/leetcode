@@ -14,8 +14,8 @@
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         # base case
-        if not root:
-            return
+        if not root:     # root is None  ➜  no node here
+            return       # stop recursing and hand back None (or nothing)
 
         # swap the pointers *before* you recurse (pre-order swap).
         # since this happens when going down the tree, it swaps all tress under it as well
