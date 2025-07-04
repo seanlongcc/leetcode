@@ -29,7 +29,5 @@ class Solution:
 
 Solution().search(nums=[-1, 0, 3, 5, 9, 12], target=9)
 
-# Need to consider single elements?
-# Use a closed interval and while left <= right.
-# Always dealing with a pair of distinct indices?
-# Use a half-open interval and while left < right.
+# Need to consider single elements? Use a closed interval and while left <= right.
+# Always dealing with a pair of distinct indices? Use a half-open interval and while left < right.
