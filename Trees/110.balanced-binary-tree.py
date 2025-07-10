@@ -17,7 +17,7 @@ class Solution:
         # any subtree whose left/right heights differ by > 1.
         self.balanced = True
 
-        def dfs(node: Optional[TreeNode]) -> int:
+        def dfs(node) -> int:
             """
             Depth-first search that returns the height of `node`’s
             subtree *and* updates `self.balanced` as a side effect.

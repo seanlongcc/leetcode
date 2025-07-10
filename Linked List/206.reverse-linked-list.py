@@ -25,4 +25,6 @@ class Solution:
             prev = current
             # move the current to the next node which we saved earlier
             current = next_
-            # @lc code=end
+
+        return prev
+        # @lc code=end
