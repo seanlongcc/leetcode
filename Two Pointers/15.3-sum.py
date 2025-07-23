@@ -13,15 +13,18 @@ class Solution:
         output = []
 
         for i, num in enumerate(nums):
+            # this is micro optimization and not needed for this problem to succeed
+            # since the array is sorted, if num > 0, that means the left and right pointers are too
             # three positive numbers cant add up to 0 so we skip
-            # this is not explicitly needed for this problem
             if num > 0:
                 break
 
-            # if num is the same number as the previous skip over
+            # if num is the same as the previous one, skip it so we don’t create duplicate triplets.
+            # this is necessary to prevent duplicates
             if i > 0 and num == nums[i - 1]:
                 continue
 
+            # keep the pointers to the right of the iterator
             left = i+1
             right = len(nums) - 1
 
