@@ -8,26 +8,33 @@
 class MinStack:
 
     def __init__(self):
+        # Initialize two stacks; one to hold the actual stack values,
         self.stack = []
-        self.minimum = [float('inf')]
+        # and the other to keep track of the minimum value at any given point.
+        self.min_stack = [float('inf')]
 
     def push(self, val: int) -> None:
-        # keeping track of the minimum at every new element being added to the stack
-        if val < self.minimum[-1]:
-            self.minimum.append(val)
-        else:
-            self.minimum.append(self.minimum[-1])
         self.stack.append(val)
+        # keeping track of the min_stack at every new element being added to the stack
+        # min of 2 numbers is O(1)
+        self.min_stack.append(min(val, self.min_stack[-1]))
+
+        # if val < self.min_stack[-1]:
+        #     self.min_stack.append(val)
+        # else:
+        #     # reappend the min so the stack and min are the same length
+        #     self.min_stack.append(self.min_stack[-1])
 
     def pop(self) -> None:
-        self.stack = self.stack[:-1]
-        self.minimum = self.minimum[:-1]
+        # regular pop is O(1)
+        self.stack.pop()
+        self.min_stack.pop()
 
     def top(self) -> int:
         return self.stack[-1]
 
     def getMin(self) -> int:
-        return self.minimum[-1]
+        return self.min_stack[-1]
 
     # Your MinStack object will be instantiated and called as such:
     # obj = MinStack()
