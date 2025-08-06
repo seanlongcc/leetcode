@@ -8,30 +8,29 @@
 class Solution:
     def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:
         # directions for moving up, left, down, right
-        DIRS = ((0, 1), (1, 0), (0, -1), (-1, 0))
+        directions = ((0, 1), (1, 0), (0, -1), (-1, 0))
         # get matrix dimensions
-        m = len(mat)
-        n = len(mat[0])
+        rows, cols = len(grid), len(grid[0])
         # intialize a queue
-        q = collections.deque()
+        queue = collections.deque()
         # create array for seen values
-        seen = [[False] * n for _ in range(m)]
+        seen = [[False] * cols for _ in range(rows)]
 
         # go through the matrix to find all the 0s
-        for i in range(m):
-            for j in range(n):
+        for i in range(rows):
+            for j in range(cols):
                 if mat[i][j] == 0:
-                    q.append((i, j))
+                    queue.append((i, j))
                     seen[i][j] = True
 
-        while q:
-            i, j = q.popleft()
+        while queue:
+            i, j = queue.popleft()
             # explore the neighboring cells in all 4 directions
-            for dx, dy in DIRS:
+            for dx, dy in directions:
                 x = i + dx
                 y = j + dy
                 # out of bounds check
-                if x < 0 or x == m or y < 0 or y == n:
+                if x < 0 or x == rows or y < 0 or y == cols:
                     continue
                 # check if seen already
                 if seen[x][y]:
@@ -39,7 +38,7 @@ class Solution:
                 # add +1 to matrix
                 mat[x][y] = mat[i][j] + 1
                 # then add it back to the end of the queue
-                q.append((x, y))
+                queue.append((x, y))
                 seen[x][y] = True
 
         return mat
