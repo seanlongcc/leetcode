@@ -17,6 +17,7 @@ class Solution:
             if target == nums[mid]:
                 print(mid)
                 return mid
+            # determine which side has the numbers ascending
             # is the left side sorted
             # its <= since nums[left] and nums[mid] can be the same value
             # the sorted side is the side that contains mid
