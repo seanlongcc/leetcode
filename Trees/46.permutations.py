@@ -27,7 +27,7 @@ class Solution:
                 path.append(n)
                 # backtrack(updated_params)
                 backtrack(path)
-                # undo_choice
+                # undo choice
                 path.pop()
 
         backtrack([])

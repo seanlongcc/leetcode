@@ -10,7 +10,7 @@ class Solution:
         # directions for moving up, left, down, right
         directions = ((0, 1), (1, 0), (0, -1), (-1, 0))
         # get matrix dimensions
-        rows, cols = len(grid), len(grid[0])
+        rows, cols = len(mat), len(mat[0])
         # intialize a queue
         queue = collections.deque()
         # create array for seen values
